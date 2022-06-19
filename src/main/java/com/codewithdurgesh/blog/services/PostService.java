@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.codewithdurgesh.blog.entities.Post;
 import com.codewithdurgesh.blog.payloads.PostDto;
+import com.codewithdurgesh.blog.payloads.PostResponse;
 
 public interface PostService {
 	
@@ -14,7 +15,7 @@ public interface PostService {
 	
 	//update
 	
-	Post updatePost(PostDto postDto, Integer postId);
+	PostDto updatePost(PostDto postDto, Integer postId);
 	
 	//delete
 	
@@ -22,11 +23,11 @@ public interface PostService {
 	
 	//get all posts
 	
-	List<Post> getAllPost();
+	PostResponse getAllPost(Integer pageNumber,Integer pageSize,String sortBy,String sortDir);
 	
 	//get single post
 	
-	Post getPostById(Integer postId);
+	PostDto getPostById(Integer postId);
 	
 	//get all posts by category
 	
@@ -38,6 +39,6 @@ public interface PostService {
 	
 	//search posts
 	
-	List<Post> searchPosts(String keyword);
+	List<PostDto> searchPosts(String keyword);
 
 }
